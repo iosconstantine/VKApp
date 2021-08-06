@@ -5,6 +5,6 @@ In the near future, It'll be a copy of the VK application.
 
 Lesson 1.
 Task:
-1. Create Application.
-2. Create a login form.
-3. Adapt the form for landscape and portrait orientation.
+- Create Application.
+- Create a login form.
+- Adapt the form for landscape and portrait orientation.
