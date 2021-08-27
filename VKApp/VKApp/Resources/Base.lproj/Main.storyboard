@@ -308,7 +308,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pnv-t2-V70">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pnv-t2-V70">
                                 <rect key="frame" x="0.0" y="56" width="375" height="619"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -365,23 +365,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsl-bh-XRi" customClass="SearchPanelControl" customModule="VKApp" customModuleProvider="target">
-                                <rect key="frame" x="327" y="56" width="40" height="619"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="8lX-BQ-PQF"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dvt-3N-x5r"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Pnv-t2-V70" firstAttribute="leading" secondItem="dvt-3N-x5r" secondAttribute="leading" id="0pU-lJ-5x0"/>
-                            <constraint firstItem="dsl-bh-XRi" firstAttribute="bottom" secondItem="dvt-3N-x5r" secondAttribute="bottom" id="5AC-7j-YCc"/>
-                            <constraint firstItem="dvt-3N-x5r" firstAttribute="trailing" secondItem="dsl-bh-XRi" secondAttribute="trailing" constant="8" id="AIg-o5-hv8"/>
                             <constraint firstItem="Pnv-t2-V70" firstAttribute="top" secondItem="dvt-3N-x5r" secondAttribute="top" id="Xmi-sh-nIH"/>
                             <constraint firstItem="dvt-3N-x5r" firstAttribute="bottom" secondItem="Pnv-t2-V70" secondAttribute="bottom" id="o9i-KA-nlP"/>
-                            <constraint firstItem="dsl-bh-XRi" firstAttribute="top" secondItem="dvt-3N-x5r" secondAttribute="top" id="r5a-iR-92O"/>
                             <constraint firstItem="dvt-3N-x5r" firstAttribute="trailing" secondItem="Pnv-t2-V70" secondAttribute="trailing" id="zfV-kC-qUL"/>
                         </constraints>
                     </view>
@@ -393,7 +383,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchPanel" destination="dsl-bh-XRi" id="F2o-zY-wHr"/>
                         <outlet property="tableView" destination="Pnv-t2-V70" id="9Ch-2P-TzF"/>
                     </connections>
                 </viewController>

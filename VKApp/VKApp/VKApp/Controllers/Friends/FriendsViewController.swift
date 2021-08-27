@@ -8,68 +8,92 @@
 import UIKit
 
 class FriendsViewController: UIViewController {
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     
-    var friends = [FriendModel]()
     let storage: FriendsStorage = FriendsStorage()
     
-    @IBOutlet weak var searchPanel: SearchPanelControl!
-    //private var searchPanel = SearchPanelControl()
-    private var firstLetters = [String]()
+    var sortedFriendsArray = [[FriendModel]]()
+    var firstLettersFriends = [Character]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        friends = storage.friends
+        
+        let friends = storage.friends
+        
+        firstLettersFriends = firstLetters(friends)
+        sortedFriendsArray = sortedFriends(friends, firstLetters: firstLettersFriends)
+        
         tableView.delegate = self
         tableView.dataSource = self
-        firstLetters = getFirstLetter(friends)
-        searchPanel.setLetters(firstLetters)
-        //searchPanel.addTarget(self, action: #selector(scrollToLetter), for: .touchUpInside)
-    }
-    
-    func getFirstLetter(_ friends: [FriendModel]) -> [String] {
-        let allFriendsName = friends.map {$0.name}
-        let firstLetter = Array(Set(allFriendsName.map {String($0.prefix(1))})).sorted()
         
-        return firstLetter
-    }
-    
-    @objc func scrollToLetter() {
-        let selectLetter = searchPanel.selectedLetter
-        for indexSextion in 0..<firstLetters.count{
-            if selectLetter == firstLetters[indexSextion] {
-                tableView.scrollToRow(at: IndexPath(row: 0, section: indexSextion), at: .top, animated: true)
-                break
-            }
-        }
+//        let header = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 50)))
+//        header.backgroundColor = .systemGray
+//        tableView.tableHeaderView = header
+        
+        tableView.register(AllFriendsHeaderTableViewCell.self, forHeaderFooterViewReuseIdentifier: AllFriendsHeaderTableViewCell.identifier)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moveToFriendCollection" {
             guard
                 let indexSelectCell = tableView.indexPathForSelectedRow?.row,
-            let destinationVC = segue.destination as? FriendsPhotosViewController
+                let indexSellectCellSection = tableView.indexPathForSelectedRow?.section,
+                let destinationVC = segue.destination as? FriendsPhotosViewController
             else { return }
-            let selectFriend = friends[indexSelectCell]
+            let selectFriend = sortedFriendsArray[indexSellectCellSection][indexSelectCell]
             destinationVC.title = selectFriend.name
             destinationVC.photos = selectFriend.images
         }
     }
 }
 
+private func sortedFriends(_ friends: [FriendModel], firstLetters: [Character]) -> [[FriendModel]] {
+    var sortedFriends = [[FriendModel]]()
+    for letter in firstLetters {
+        let friendsForLetter = friends.filter { $0.name.first == letter }
+        sortedFriends.append(friendsForLetter)
+    }
+    return sortedFriends
+}
+
+private func firstLetters(_ friends: [FriendModel]) -> [Character] {
+    // берем все первые буквы
+    let allFirstLetter = friends.compactMap { $0.name.first }
+    // удаляем дубликаты букв
+    let withoutDublecateLetter = Array(Set(allFirstLetter))
+    // сортируем и возвращаем
+    return withoutDublecateLetter.sorted()
+}
+
+
 extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sortedFriendsArray.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return sortedFriendsArray[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FriendsTableViewCell.identifier) as! FriendsTableViewCell
-        cell.configure(friend: friends[indexPath.row])
+        
+        let friend = sortedFriendsArray[indexPath.section][indexPath.row]
+        
+        cell.configure(friend: friend)
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: AllFriendsHeaderTableViewCell.identifier) as! AllFriendsHeaderTableViewCell
+        
+        header.configure(String(firstLettersFriends[section]))
+        return header
+    }
 }
+
+

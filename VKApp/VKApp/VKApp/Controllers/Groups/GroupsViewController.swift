@@ -26,7 +26,34 @@ class GroupsViewController: UIViewController {
         guard let sourceController = segue.source as? AllGroupsViewController,
               let indexSelectRow = sourceController.tableView.indexPathForSelectedRow
               else { return }
-        let group = sourceController.groups[indexSelectRow.row]
+        
+        var group: GroupModel
+        
+        
+//        var isContain: Bool {
+//            return groups.contains(where: { group.nameGroup == $0.nameGroup })
+//        }
+//
+//        switch sourceController.isFiltering {
+//        case true:
+//            group = sourceController.filtredGroups[indexSelectRow.row]
+//            if !isContain {
+//                groups.append(group)
+//            }
+//        case false:
+//            group = sourceController.groups[indexSelectRow.row]
+//            if !isContain {
+//                groups.append(group)
+//            }
+//        }
+        
+        
+        if sourceController.isFiltering {
+            group = sourceController.filtredGroups[indexSelectRow.row]
+        } else {
+            group = sourceController.groups[indexSelectRow.row]
+        }
+        
         if !groups.contains(where: { group.nameGroup == $0.nameGroup }) {
             groups.append(group)
             
