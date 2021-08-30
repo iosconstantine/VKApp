@@ -14,14 +14,14 @@ class FriendsStorage {
     init() {
         friends = [
             FriendModel(name: "Тищенко Константин Тимурович", avatarName: "avatarM4", images: [
-                            PhotoModel(photoName: "1", likeCount: 0, isLike: false),
-                            PhotoModel(photoName: "2", likeCount: 0, isLike: false),
-                            PhotoModel(photoName: "3", likeCount: 0, isLike: false),
-                            PhotoModel(photoName: "4", likeCount: 0, isLike: false),
-                            PhotoModel(photoName: "5", likeCount: 0, isLike: false),
-                            PhotoModel(photoName: "6", likeCount: 0, isLike: false),
-                            PhotoModel(photoName: "7", likeCount: 0, isLike: false),
-                            PhotoModel(photoName: "8", likeCount: 0, isLike: false)]),
+                            PhotoModel(photoName: "1", likeCount: 1, isLike: true),
+                            PhotoModel(photoName: "2", likeCount: 3, isLike: false),
+                            PhotoModel(photoName: "3", likeCount: 5, isLike: false),
+                            PhotoModel(photoName: "4", likeCount: 7, isLike: true),
+                            PhotoModel(photoName: "5", likeCount: 12, isLike: false),
+                            PhotoModel(photoName: "6", likeCount: 33, isLike: false),
+                            PhotoModel(photoName: "7", likeCount: 92, isLike: false),
+                            PhotoModel(photoName: "8", likeCount: 4, isLike: false)]),
             
             FriendModel(name: "Абрамов Кирилл Тимофеевич", avatarName: "avatarM1", images: [
                             PhotoModel(photoName: "2", likeCount: 0, isLike: false),

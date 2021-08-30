@@ -34,13 +34,24 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
        
         let photo = photos[indexPath.item]
         cell.configure(photo)
-        cell.likeTapped = { [weak self] in
-            self?.photos[indexPath.item].isLike.toggle()
-                collectionView.reloadSections(IndexSet(integer: 0)) //UIView.performWithoutAnimation
+        cell.likeTapped = { [weak self] isLike in
+            self?.photos[indexPath.item].isLike = isLike
         }
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        // animation 1
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 10, 100)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0.5
+        
+        UIView.animate(withDuration: 1.0) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
+    }
     
 }

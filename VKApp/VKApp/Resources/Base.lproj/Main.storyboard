@@ -409,10 +409,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsPhotosViewCell" id="Thx-Li-Wfl" customClass="FriendsPhotosViewCell" customModule="VKApp" customModuleProvider="target">
-                                        <rect key="frame" x="100" y="10" width="175" height="204"/>
+                                        <rect key="frame" x="100" y="10" width="175" height="205"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J0G-Gk-YAQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="175" height="204"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nDg-g4-A1P" customClass="PhotoView" customModule="VKApp" customModuleProvider="target">
@@ -422,12 +422,12 @@
                                                         <constraint firstAttribute="height" constant="175" id="Ra6-Ve-Ecb"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-FH-5O0" customClass="LikeControl" customModule="VKApp" customModuleProvider="target">
-                                                    <rect key="frame" x="151" y="177" width="24" height="24"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omp-FH-5O0" customClass="LikeControl2" customModule="VKApp" customModuleProvider="target">
+                                                    <rect key="frame" x="125" y="177" width="50" height="25"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="YYW-tE-Hbf"/>
-                                                        <constraint firstAttribute="width" constant="24" id="Ybd-pv-iTf"/>
+                                                        <constraint firstAttribute="height" constant="25" id="YYW-tE-Hbf"/>
+                                                        <constraint firstAttribute="width" constant="50" id="Ybd-pv-iTf"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -442,7 +442,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="likeControl" destination="Omp-FH-5O0" id="HYo-In-LVs"/>
+                                            <outlet property="likeControl" destination="Omp-FH-5O0" id="t6B-zy-bGe"/>
                                             <outlet property="photoImage" destination="nDg-g4-A1P" id="v69-JG-xwm"/>
                                         </connections>
                                     </collectionViewCell>

@@ -12,7 +12,11 @@ struct PhotoModel {
     var likeCount: Int
     var isLike: Bool {
         didSet {
-            likeCount += isLike ? 1 : -1
+            if isLike {
+                likeCount += 1
+            } else {
+                likeCount -= 1
+            }
         }
     }
 }
