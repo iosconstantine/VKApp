@@ -444,6 +444,7 @@
                                         <connections>
                                             <outlet property="likeControl" destination="Omp-FH-5O0" id="t6B-zy-bGe"/>
                                             <outlet property="photoImage" destination="nDg-g4-A1P" id="v69-JG-xwm"/>
+                                            <segue destination="03F-NC-WZo" kind="show" identifier="toPresenter" id="u3H-kL-DEL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -466,6 +467,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFT-9Y-M4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3892" y="-338.42364532019707"/>
+        </scene>
+        <!--Presenter View Controller-->
+        <scene sceneID="t5F-N9-VY3">
+            <objects>
+                <viewController id="03F-NC-WZo" customClass="PresenterViewController" customModule="VKApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ajr-1R-ECo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cZJ-Xf-KuI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rBh-Bh-njh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VmM-G3-av8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4732" y="-338"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2iR-a3-Grg">

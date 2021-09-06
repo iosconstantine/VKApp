@@ -41,9 +41,12 @@ class FriendsViewController: UIViewController {
             guard
                 let indexSelectCell = tableView.indexPathForSelectedRow?.row,
                 let indexSellectCellSection = tableView.indexPathForSelectedRow?.section,
-                let destinationVC = segue.destination as? FriendsPhotosViewController
+                let destinationVC = segue.destination as? FriendsPhotosViewController,
+            let nameTappedImage = segue.destination as? FriendsPhotosViewController // получим доступ к свойствам контроллера
             else { return }
+            
             let selectFriend = sortedFriendsArray[indexSellectCellSection][indexSelectCell]
+            nameTappedImage.userNameFromOtherView = selectFriend.name // по тапу на ячейку передадим имя нажатой ячейки в наше свойство в другом контроллере
             destinationVC.title = selectFriend.name
             destinationVC.photos = selectFriend.images
         }

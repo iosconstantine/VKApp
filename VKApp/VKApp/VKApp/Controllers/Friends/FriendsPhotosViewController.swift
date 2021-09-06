@@ -10,6 +10,7 @@ import UIKit
 class FriendsPhotosViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    var userNameFromOtherView = String() // сюда по тапу будет приходить имя нажатой ячейки
     
     var photos = [PhotoModel]()
     
@@ -17,6 +18,18 @@ class FriendsPhotosViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+    
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "toPresenter",
+            let destination = segue.destination as? PresenterViewController
+        {
+            destination.photos = FriendsStorage.getPhotosForUsername(username: userNameFromOtherView) // передаем фотографии в презентер человека, имя которого мы получили по тапу на ячейку друзей
+            let indexPath2 = collectionView.indexPathsForSelectedItems
+            destination.selectedPhoto = indexPath2![0].item
+        }
     }
 }
 
@@ -32,6 +45,7 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendsPhotosViewCell.identifier, for: indexPath) as! FriendsPhotosViewCell
        
+    
         let photo = photos[indexPath.item]
         cell.configure(photo)
         cell.likeTapped = { [weak self] isLike in
@@ -40,6 +54,8 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
@@ -53,5 +69,5 @@ extension FriendsPhotosViewController: UICollectionViewDataSource {
             cell.alpha = 1.0
         }
     }
-    
 }
+
