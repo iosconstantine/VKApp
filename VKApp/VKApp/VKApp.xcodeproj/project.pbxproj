@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00EF18226F499FE00ABE208 /* mySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00EF18126F499FE00ABE208 /* mySession.swift */; };
 		E012FD2826C355B2009B16F9 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E012FD2726C355B2009B16F9 /* GroupsViewController.swift */; };
 		E012FD2A26C356C6009B16F9 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E012FD2926C356C6009B16F9 /* FriendsViewController.swift */; };
 		E012FD2E26C358B9009B16F9 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E012FD2D26C358B9009B16F9 /* FriendsTableViewCell.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E00EF18126F499FE00ABE208 /* mySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mySession.swift; sourceTree = "<group>"; };
 		E012FD2726C355B2009B16F9 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		E012FD2926C356C6009B16F9 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		E012FD2D26C358B9009B16F9 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E00EF18026F499CA00ABE208 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				E00EF18126F499FE00ABE208 /* mySession.swift */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
 		E012FD2526C32BFD009B16F9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +302,7 @@
 		E0FEE09E26BC907B00012AEE /* VKApp */ = {
 			isa = PBXGroup;
 			children = (
+				E00EF18026F499CA00ABE208 /* Singleton */,
 				E086D85826CD5BA20062C9B0 /* Controls */,
 				E0F30B1326CD57AD005C9633 /* Custom */,
 				E0EF51CA26C951DB0025A24D /* Repository */,
@@ -409,6 +420,7 @@
 				E08D303626EBA1A0006C8306 /* CustomNavigationController.swift in Sources */,
 				E08D303526EBA1A0006C8306 /* InteractiveTransition.swift in Sources */,
 				E05C364F26E6741100215082 /* PresenterViewController.swift in Sources */,
+				E00EF18226F499FE00ABE208 /* mySession.swift in Sources */,
 				E0138BB926DA599C00FC5E9D /* LikeControl2.swift in Sources */,
 				E0EF51C726C949D80025A24D /* FriendModel.swift in Sources */,
 				E087A5DF26CD78D40014ADFD /* SingletonSettings.swift in Sources */,
