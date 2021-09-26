@@ -40,6 +40,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Проверка на работоспособность
+        let network = NetworkServise()
+        //network.getPhotos(owner_id: Session.shared.userId ?? 0)
+        //network.getGroups()
+        network.getSearchGroups(text: "iOS")
     
         buttonOutlet.layer.cornerRadius = 10 // Закругление углов у кнопки
         

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E00EF18226F499FE00ABE208 /* mySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00EF18126F499FE00ABE208 /* mySession.swift */; };
+		E00EF18226F499FE00ABE208 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00EF18126F499FE00ABE208 /* Session.swift */; };
+		E00EF18526F4A96A00ABE208 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00EF18426F4A96A00ABE208 /* LoginViewController.swift */; };
 		E012FD2826C355B2009B16F9 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E012FD2726C355B2009B16F9 /* GroupsViewController.swift */; };
 		E012FD2A26C356C6009B16F9 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E012FD2926C356C6009B16F9 /* FriendsViewController.swift */; };
 		E012FD2E26C358B9009B16F9 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E012FD2D26C358B9009B16F9 /* FriendsTableViewCell.swift */; };
@@ -29,6 +30,8 @@
 		E08D303426EBA1A0006C8306 /* PushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D302F26EBA1A0006C8306 /* PushAnimator.swift */; };
 		E08D303526EBA1A0006C8306 /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D303126EBA1A0006C8306 /* InteractiveTransition.swift */; };
 		E08D303626EBA1A0006C8306 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D303226EBA1A0006C8306 /* CustomNavigationController.swift */; };
+		E09FA09226FF6F8200DE9859 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09FA09126FF6F8200DE9859 /* NetworkService.swift */; };
+		E09FA09427005ABB00DE9859 /* NetworkServiceAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09FA09327005ABB00DE9859 /* NetworkServiceAlamofire.swift */; };
 		E0E97C4F26C9CF4000E415D4 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E97C4E26C9CF4000E415D4 /* PhotoModel.swift */; };
 		E0EF51C726C949D80025A24D /* FriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF51C626C949D80025A24D /* FriendModel.swift */; };
 		E0EF51C926C94A2B0025A24D /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EF51C826C94A2B0025A24D /* GroupModel.swift */; };
@@ -45,7 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E00EF18126F499FE00ABE208 /* mySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mySession.swift; sourceTree = "<group>"; };
+		E00EF18126F499FE00ABE208 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E00EF18426F4A96A00ABE208 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E012FD2726C355B2009B16F9 /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		E012FD2926C356C6009B16F9 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		E012FD2D26C358B9009B16F9 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		E08D302F26EBA1A0006C8306 /* PushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushAnimator.swift; sourceTree = "<group>"; };
 		E08D303126EBA1A0006C8306 /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
 		E08D303226EBA1A0006C8306 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		E09FA09126FF6F8200DE9859 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E09FA09327005ABB00DE9859 /* NetworkServiceAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceAlamofire.swift; sourceTree = "<group>"; };
 		E0E97C4E26C9CF4000E415D4 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		E0EF51C626C949D80025A24D /* FriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendModel.swift; sourceTree = "<group>"; };
 		E0EF51C826C94A2B0025A24D /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
@@ -98,9 +104,19 @@
 		E00EF18026F499CA00ABE208 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				E00EF18126F499FE00ABE208 /* mySession.swift */,
+				E00EF18126F499FE00ABE208 /* Session.swift */,
 			);
 			path = Singleton;
+			sourceTree = "<group>";
+		};
+		E00EF18326F4A95A00ABE208 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E00EF18426F4A96A00ABE208 /* LoginViewController.swift */,
+				E09FA09126FF6F8200DE9859 /* NetworkService.swift */,
+				E09FA09327005ABB00DE9859 /* NetworkServiceAlamofire.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		E012FD2526C32BFD009B16F9 /* Controllers */ = {
@@ -302,6 +318,7 @@
 		E0FEE09E26BC907B00012AEE /* VKApp */ = {
 			isa = PBXGroup;
 			children = (
+				E00EF18326F4A95A00ABE208 /* Network */,
 				E00EF18026F499CA00ABE208 /* Singleton */,
 				E086D85826CD5BA20062C9B0 /* Controls */,
 				E0F30B1326CD57AD005C9633 /* Custom */,
@@ -406,6 +423,7 @@
 				E087A5DB26CD6F230014ADFD /* SettingsViewController.swift in Sources */,
 				E086D85A26CD5BB40062C9B0 /* LikeControl.swift in Sources */,
 				E012FD2A26C356C6009B16F9 /* FriendsViewController.swift in Sources */,
+				E09FA09427005ABB00DE9859 /* NetworkServiceAlamofire.swift in Sources */,
 				E0F30B1626CD57CC005C9633 /* PhotoView.swift in Sources */,
 				E0EF51D026C959010025A24D /* AllGroupsViewCell.swift in Sources */,
 				E08D303426EBA1A0006C8306 /* PushAnimator.swift in Sources */,
@@ -420,7 +438,9 @@
 				E08D303626EBA1A0006C8306 /* CustomNavigationController.swift in Sources */,
 				E08D303526EBA1A0006C8306 /* InteractiveTransition.swift in Sources */,
 				E05C364F26E6741100215082 /* PresenterViewController.swift in Sources */,
-				E00EF18226F499FE00ABE208 /* mySession.swift in Sources */,
+				E00EF18226F499FE00ABE208 /* Session.swift in Sources */,
+				E00EF18526F4A96A00ABE208 /* LoginViewController.swift in Sources */,
+				E09FA09226FF6F8200DE9859 /* NetworkService.swift in Sources */,
 				E0138BB926DA599C00FC5E9D /* LikeControl2.swift in Sources */,
 				E0EF51C726C949D80025A24D /* FriendModel.swift in Sources */,
 				E087A5DF26CD78D40014ADFD /* SingletonSettings.swift in Sources */,

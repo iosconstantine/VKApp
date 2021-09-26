@@ -21,6 +21,10 @@ class FriendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let network = NetworkServise()
+        
+        network.getFriends(userId: Session.shared.userId ?? 0)
+        
         let friends = storage.friends
         
         firstLettersFriends = firstLetters(friends)
